@@ -5,6 +5,7 @@ export APPTAINER_DOCKER_USERNAME=""
 export APPTAINER_DOCKER_PASSWORD=""
 VLN_HAMT_DIR="/nfs/hpc/sw/zijiao/unitVLN/VLN-HAMT/"
 DATA_DIR="/nfs/hpc/share/yangziji/repos/"
+
 # you need to get the matterport data from https://niessner.github.io/Matterport/
 MATTERPORT_DATA_DIR="/nfs/hpc/share/yangziji/data/matterport/images/v1/scans"
 
@@ -13,8 +14,7 @@ export APPTAINER_BIND="$MATTERPORT_DATA_DIR:/usr/src/env_drop/data/v1/scans, $DA
 
 ```
 # Get image
-<!-- Note: download docker which I precompiled using docker file below -->
-singularity pull docker://tianshup/tianshu2zijiao:20210526
+```singularity pull docker://tianshup/tianshu2zijiao:20210526```
 
 # Usage
 ```

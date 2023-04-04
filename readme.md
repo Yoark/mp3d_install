@@ -1,3 +1,9 @@
+# Description
+
+The docker image is preinstalled with mp3d library, and a specific version of huggingface transformer. If you want to train and run VLN model in mp3d environment, you can safely follow the below steps; however, if you want a newer version of huggingface transformer, or if you want to add other libraries like weights and bias (wandb), you may need to recreate the docker image. (Since singularity does not allow you to modify the image permanently after creation, you can install libraries temporarily, but you need to reinstall them every time you start the container, :))
+
+Contact me if you have a better way <yangziji@oregonstate.edu>
+
 # Prepare for Singularity
 ```
 # docker hub login

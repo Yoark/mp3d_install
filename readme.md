@@ -1,6 +1,8 @@
 # Description
 
-The docker image is preinstalled with mp3d library, and a specific version of huggingface transformer. If you want to train and run VLN model in mp3d environment, you can safely follow the below steps; however, if you want a newer version of huggingface transformer, or if you want to add other libraries like weights and bias (wandb), you may need to recreate the docker image. (Since singularity does not allow you to modify the image permanently after creation, you can install libraries temporarily, but you need to reinstall them every time you start the container, :))
+The docker image is preinstalled with mp3d library, and a specific version of huggingface transformer. If you want to train and run VLN model in mp3d environment, you can safely follow the below steps: Bind your working directory to the container, and use mp3d inside the container.
+
+However, if you want a newer version of huggingface transformer, or if you want to add other libraries like weights and bias (wandb), you may need to recreate the docker image. Since singularity does not allow you to modify the image permanently after creation, you can install libraries temporarily, but you need to reinstall them every time you start the container. Overall this setup should work, but is not very flexible. If you want more flxibility, you should try to install mp3d locally follow https://github.com/peteanderson80/Matterport3DSimulator. In that case, you may want to use [vcpkg](https://github.com/microsoft/vcpkg) to surpass the root requirement of some local installs on cluster. (where you typically don't have root access)
 
 Contact me if you have a better way <yangziji@oregonstate.edu>
 

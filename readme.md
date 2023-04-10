@@ -21,6 +21,10 @@ MATTERPORT_DATA_DIR="/nfs/hpc/share/yangziji/data/matterport/images/v1/scans"
 export APPTAINER_BIND="$MATTERPORT_DATA_DIR:/usr/src/env_drop/data/v1/scans, $DATA_DIR/Recurrent-VLN-BERT:/usr/src/Recurrent-VLN-BERT,$DATA_DIR/crafty_env/output:/usr/src/crafty, /nfs/hpc/share/yangziji/data/RR:/usr/src/RR, $DATA_DIR/neoteric:/usr/src/neoteric, $DATA_DIR/speaker-fo:/usr/src/speaker-fo, $VLN_HAMT_DIR:/usr/src/VLN-HAMT, /nfs/hpc/share/yangziji/data:/usr/src/data, /nfs/hpc/sw/zijiao/unitVLN/CLIP-ViL/CLIP-ViL-VLN:/usr/src/clip-vln, /nfs/hpc/sw/zijiao/cache:/usr/src/cache"
 
 ```
+# Set path for matterport data:
+```
+MATTERPORT_DATA_DIR="/nfs/hpc/share/yangziji/data/matterport/images/v1/scans"
+```
 # Get image
 ```singularity pull docker://tianshup/tianshu2zijiao:20210526```
 

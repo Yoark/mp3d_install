@@ -6,24 +6,21 @@ However, if you want a newer version of huggingface transformer, or if you want 
 
 Contact me if you have a better way <yangziji@oregonstate.edu>
 
-# Prepare for Singularity
+# Prepare for Singularity (add this to your .bashrc)
 ```
 # docker hub login
 export APPTAINER_DOCKER_USERNAME=""
 export APPTAINER_DOCKER_PASSWORD=""
-VLN_HAMT_DIR="/nfs/hpc/sw/zijiao/unitVLN/VLN-HAMT/"
-DATA_DIR="/nfs/hpc/share/yangziji/repos/"
+VLN_HAMT_DIR=""
+DATA_DIR=""
 
 # you need to get the matterport data from https://niessner.github.io/Matterport/
-MATTERPORT_DATA_DIR="/nfs/hpc/share/yangziji/data/matterport/images/v1/scans"
+MATTERPORT_DATA_DIR="REPLACE_THIS/v1/scans"
 
 # it binds data dir from outside environment into your container environment
-export APPTAINER_BIND="$MATTERPORT_DATA_DIR:/usr/src/env_drop/data/v1/scans, $DATA_DIR/Recurrent-VLN-BERT:/usr/src/Recurrent-VLN-BERT,$DATA_DIR/crafty_env/output:/usr/src/crafty, /nfs/hpc/share/yangziji/data/RR:/usr/src/RR, $DATA_DIR/neoteric:/usr/src/neoteric, $DATA_DIR/speaker-fo:/usr/src/speaker-fo, $VLN_HAMT_DIR:/usr/src/VLN-HAMT, /nfs/hpc/share/yangziji/data:/usr/src/data, /nfs/hpc/sw/zijiao/unitVLN/CLIP-ViL/CLIP-ViL-VLN:/usr/src/clip-vln, /nfs/hpc/sw/zijiao/cache:/usr/src/cache"
+export APPTAINER_BIND="$MATTERPORT_DATA_DIR:/usr/src/env_drop/data/v1/scans, /nfs/hpc/share/yangziji/data/RR:/usr/src/RR,  $VLN_HAMT_DIR:/usr/src/VLN-HAMT, /nfs/hpc/share/yangziji/data:/usr/src/data, /nfs/hpc/sw/zijiao/unitVLN/CLIP-ViL/CLIP-ViL-VLN:/usr/src/clip-vln"
+Note: you need to bind matterport data dir, your vln code dir, and your vln data dir.
 
-```
-# Set path for matterport data:
-```
-MATTERPORT_DATA_DIR="/nfs/hpc/share/yangziji/data/matterport/images/v1/scans"
 ```
 # Get image
 ```singularity pull docker://tianshup/tianshu2zijiao:20210526```
